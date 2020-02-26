@@ -7,11 +7,11 @@
 
 ## Init
 ```
-sudo cp conf/setkubeconfig /usr/bin/setkubeconfig
-sudo chmod a+x /usr/bin/setkubeconfig
+sudo cp conf/setkubeconfig /usr/local/bin/setkubeconfig
+sudo chmod a+x /usr/local/bin/setkubeconfig
 
-sudo cp conf/bug /usr/bin/bug
-sudo chmod a+x /usr/bin/bug
+sudo cp conf/bug /usr/local/bin/bug
+sudo chmod a+x /usr/local/bin/bug
 # TODO zshrc 
 ```
 
