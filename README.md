@@ -4,6 +4,7 @@
 * Ibmcloud - https://cloud.ibm.com/docs/cli?topic=cloud-cli-install-ibmcloud-cli
 * Azure CLI - https://docs.microsoft.com/ko-kr/cli/azure/install-azure-cli?view=azure-cli-latest
 * jq - https://stedolan.github.io/jq/download/
+* k9s - https://github.com/derailed/k9s/releases
 
 ## Init
 ```
