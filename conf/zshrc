@@ -101,10 +101,12 @@ source $ZSH/oh-my-zsh.sh
 alias kubeconfig='source setkubeconfig'
 alias cdkube='cd /mnt/c/Users/Administrator/.kube'
 alias cdaks='cd /mnt/c/Users/Administrator/.aks'
+alias cdeks='cd /mnt/c/Users/Administrator/.eks'
 alias bx='/mnt/c/Users/Administrator/Downloads/IBM_Cloud_CLI/ibmcloud'
 alias jenpo="k get po -l app=zcp-jenkins -n zcp-system --no-headers | cut -f 1 -d ' '"
 alias jenbash="k exec -it -n zcp-system \`jenpo\` bash "
 alias kgn="kcgc --no-headers | awk '{print \$5}'"
+alias withtime="tr '\n' '\0' | xargs -0IL date +\"%Y%m%d_%H%M%S:L\""
 alias sk='skaffold'
 
 export PATH=$PATH:/usr/local/go/bin:~/bin
