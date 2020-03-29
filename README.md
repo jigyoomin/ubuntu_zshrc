@@ -15,6 +15,9 @@ sudo chmod a+x /usr/local/bin/setkubeconfig
 
 sudo cp conf/bug /usr/local/bin/bug
 sudo chmod a+x /usr/local/bin/bug
+
+sudo cp conf/getkubeconfig /usr/local/bin/getkubeconfig
+sudo chmod a+x /usr/local/bin/getkubeconfig 
 # TODO zshrc 
 ```
 
