@@ -10,6 +10,8 @@
 
 ## Init
 ```
+cp conf/vimrc ~/.vimrc
+
 sudo cp conf/setkubeconfig /usr/local/bin/setkubeconfig
 sudo chmod a+x /usr/local/bin/setkubeconfig
 
