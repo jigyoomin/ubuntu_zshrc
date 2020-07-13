@@ -5,7 +5,7 @@
   * release version - https://github.com/kubernetes/kubernetes/tags
 * Ibmcloud - https://cloud.ibm.com/docs/cli?topic=cloud-cli-install-ibmcloud-cli
 * Azure CLI - https://docs.microsoft.com/ko-kr/cli/azure/install-azure-cli?view=azure-cli-latest
-* aws cli
+* aws cli - https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/install-cliv2.html
 * jq - https://stedolan.github.io/jq/download/
 * k9s - https://github.com/derailed/k9s/releases
 * tkn cli
