@@ -1,0 +1,31 @@
+# your server name goes here
+# server=https://c4.seo01.containers.cloud.ibm.com:25708
+server=$(kubectl config view -o jsonpath='{.clusters[0].cluster.server}')
+# the name of the secret containing the service account token goes here
+namespace=$1
+sa=$2
+name=$(kubectl get sa $sa -n $namespace -o jsonpath={'.secrets[0].name'})
+echo $name
+ca=$(kubectl get secret/$name -n $namespace -o jsonpath='{.data.ca\.crt}')
+token=$(kubectl get secret/$name -n $namespace -o jsonpath='{.data.token}' | base64 -d)
+namespace=$(kubectl get secret/$name -n $namespace -o jsonpath='{.data.namespace}' | base64 -d)
+echo "
+apiVersion: v1
+kind: Config
+clusters:
+- name: default-cluster
+  cluster:
+    certificate-authority-data: ${ca}
+    server: ${server}
+contexts:
+- name: default-context
+  context:
+    cluster: default-cluster
+    namespace: ${namespace}
+    user: default-user
+current-context: default-context
+users:
+- name: default-user
+  user:
+    token: ${token}
+" > ${namespace}_${sa}.conf
