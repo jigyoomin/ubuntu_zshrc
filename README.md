@@ -23,6 +23,11 @@ sudo chmod a+x /usr/local/bin/bug
 
 sudo cp conf/getkubeconfig /usr/local/bin/getkubeconfig
 sudo chmod a+x /usr/local/bin/getkubeconfig 
+
+sudo cp conf/setkcn /usr/local/bin/setkcn
+sudo chmod a+x /usr/local/bin/setkcn
+
 # TODO zshrc 
+cp conf/zshrc ~/.zshrc
 ```
 
