@@ -9,8 +9,17 @@ echo $name
 ca=$(kubectl get secret/$name -n $namespace -o jsonpath='{.data.ca\.crt}')
 token=$(kubectl get secret/$name -n $namespace -o jsonpath='{.data.token}' | base64 -d)
 namespace=$(kubectl get secret/$name -n $namespace -o jsonpath='{.data.namespace}' | base64 -d)
-echo "
-apiVersion: v1
+
+context=`kubectl config current-context`
+
+if [[ $context == arn* ]] ;
+then
+    context=`echo $context | cut -f 2 -d '/'`
+else
+    context=`kccc | cut -f 1 -d '/'`
+fi
+
+echo "apiVersion: v1
 kind: Config
 clusters:
 - name: default-cluster
@@ -18,12 +27,12 @@ clusters:
     certificate-authority-data: ${ca}
     server: ${server}
 contexts:
-- name: default-context
+- name: ${context}
   context:
     cluster: default-cluster
     namespace: ${namespace}
     user: default-user
-current-context: default-context
+current-context: ${context}
 users:
 - name: default-user
   user:
