@@ -112,5 +112,7 @@ alias sk='skaffold'
 alias cdws='cd /mnt/d/80.dev/workspaces2/zcp-2.0'
 alias alb1='kgs -n kube-system --no-headers -o custom-columns=name:.metadata.name | grep alb1'
 alias vpn='kpf service/`alb1` 80 443 -n kube-system --address 0.0.0.0'
+alias nvpn="kubectl port-forward service/private-ingress-nginx-controller 80 443 -n kube-system --address 0.0.0.0"
+alias nvpn2="kubectl port-forward service/private-nginx-ingress-controller 80 443 -n kube-system --address 0.0.0.0"
 
 export PATH=$PATH:/usr/local/go/bin:~/bin
