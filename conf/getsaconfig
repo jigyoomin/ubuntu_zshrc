@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # your server name goes here
 # server=https://c4.seo01.containers.cloud.ibm.com:25708
 server=$(kubectl config view -o jsonpath='{.clusters[0].cluster.server}')
